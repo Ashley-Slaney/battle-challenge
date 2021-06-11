@@ -1,7 +1,14 @@
 feature 'Attack another player' do 
-  scenario 'Attack player 2 and get confirmation' do
+  background do
     sign_in_and_play
-    visit('/attack')
-    expect(page).to have_content('Ash attacked Frank!')
+    click_link('Attack')
+  end
+
+  scenario 'Attack player 2 and reduce HP by 10' do
+    expect(page).to have_content('Ash damaged Frank for 10HP')
+  end
+
+  scenario 'display current hp' do
+    expect(page).to have_content("Frank's current HP: 60")
   end
 end
