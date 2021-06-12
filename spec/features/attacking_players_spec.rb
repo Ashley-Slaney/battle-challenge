@@ -9,6 +9,6 @@ feature 'Attack another player' do
   end
 
   scenario 'display current hp' do
-    expect(page).to have_content("Frank's current HP: 60")
+    expect(page).to have_content("Frank's current HP: 50")
   end
 end
